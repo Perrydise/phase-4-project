@@ -1,8 +1,10 @@
-import logo from './logo.svg';
+import Auth from './components/Auth'
 import './App.css';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import LogIn from './LogIn';
 
 function App() {
+  const [currentUser, setCurrentUser] = useState('')
 
   useEffect(()=>{
     fetch('/auth')
@@ -13,23 +15,9 @@ function App() {
     })
   },[])
 
+  if (!currentUser) return<LogIn setCurrentUser={setCurrentUser} />
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LogIn />
   );
 }
 
