@@ -1,4 +1,4 @@
-import Auth from './components/Auth'
+// import Auth from './components/Auth'
 import './App.css';
 import { useState, useEffect } from 'react';
 import LogIn from './LogIn';
