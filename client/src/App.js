@@ -1,7 +1,8 @@
 // import Auth from './components/Auth'
 import './App.css';
 import { useState, useEffect } from 'react';
-import LogIn from './LogIn';
+import LogIn from './SignUp';
+import SignUp from './SignUp';
 
 function App() {
   const [currentUser, setCurrentUser] = useState('')
@@ -9,15 +10,15 @@ function App() {
   useEffect(()=>{
     fetch('/auth')
     .then(res => {
-      if(res.ok){
         res.json().then(user => setCurrentUser(user))
       }
-    })
+    )
+    .catch((e) => console.error(e))
   },[])
 
-  if (!currentUser) return<LogIn setCurrentUser={setCurrentUser} />
+  if (!currentUser) return<SignUp setCurrentUser={currentUser} />
   return (
-    <LogIn />
+    <SignUp setCurrentUser={setCurrentUser}/>
   );
 }
 
