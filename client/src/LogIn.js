@@ -21,6 +21,8 @@ function LogIn ({setCurrentUser}) {
         r.json().then((err) => setErrors(err.errors));
       }
     });
+    setUsername("")
+    setPassword("")
   }
 
 //   function handleSubmit(e) {

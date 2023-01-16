@@ -25,6 +25,8 @@ function SignUp ({ setCurrentUser }) {
         // }
       }).then ((res) => console.log(res))
       console.log(user)
+      setUsername("")
+      setPassword("")
     }
   
     return (     
