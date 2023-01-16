@@ -3,6 +3,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import LogIn from './SignUp';
 import SignUp from './SignUp';
+import HomePage from './HomePage';
 
 function App() {
   const [currentUser, setCurrentUser] = useState('')
@@ -16,9 +17,9 @@ function App() {
     .catch((e) => console.error(e))
   },[])
 
-  if (!currentUser) return<SignUp setCurrentUser={currentUser} />
+  if (!currentUser) return<HomePage setCurrentUser={currentUser} />
   return (
-    <SignUp setCurrentUser={setCurrentUser}/>
+    <HomePage setCurrentUser={setCurrentUser}/>
   );
 }
 

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SignUp from "./SignUp";
 import Login from "./LogIn"
 
-function HomePage() {
+function HomePage({setCurrentUser}) {
     const [isShown, setIsShown] = useState(false)
 
     const handleClick = event => {
@@ -13,9 +13,9 @@ function HomePage() {
         <div className="home-main-div">
             <h1 className="home-title">Mountain View</h1>
             <h2 className="home second title">Please create an account to continue</h2>
-            <SignUp />
+            <SignUp setCurrentUser={setCurrentUser}/>
             {isShown &&
-                <Login />
+                <Login setCurrentUser={setCurrentUser} />
             }
             <button onClick={handleClick}>Login</button>
         </div>
