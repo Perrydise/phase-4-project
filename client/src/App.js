@@ -8,7 +8,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState('')
 
   useEffect(()=>{
-    fetch('/auth')
+    fetch("http://localhost:3000/auth")
     .then(res => {
         res.json().then(user => setCurrentUser(user))
       }

@@ -12,21 +12,23 @@ function SignUp ({ setCurrentUser }) {
         username,
         password
       }
-      fetch('/users',{
+      fetch("http://localhost:3000/users",{
         method: "POST",
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify(user)
-      })
+      })      
       .then(res => {
-        if(res.ok){
-          res.json().then(setCurrentUser)
-        } else {
-          res.json().then( e => console.error(e))
-        }
-      })
+        res.json()
+        // if(res.ok){
+        //   res.json().then(setCurrentUser(user))
+        // } else {
+        //   res.json().then( e => console.error(e))
+        // }
+      }).then ((res) => console.log(res))
+      console.log(user)
     }
   
-    return (
+    return (     
       <form onSubmit={handleSubmit}>
         <label for="username">Username: </label>
         <input
