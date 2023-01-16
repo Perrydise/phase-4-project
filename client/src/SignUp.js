@@ -4,8 +4,7 @@ function SignUp ({ setCurrentUser }) {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [passwordConfirmation, setPasswordConfirmation] = useState("")
-    const [showForm, setShowForm] = useState(true)
-  
+    
     function handleSubmit(e) {
       e.preventDefault()
       const user = {

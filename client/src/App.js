@@ -1,8 +1,6 @@
 // import Auth from './components/Auth'
 import './App.css';
 import { useState, useEffect } from 'react';
-import LogIn from './SignUp';
-import SignUp from './SignUp';
 import HomePage from './HomePage';
 
 function App() {
