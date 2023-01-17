@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :mountains
   resources :users, only:[:show, :create]
   post "/login", to: "sessions#create"
   get "/auth", to: "users#show"
