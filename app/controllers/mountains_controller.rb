@@ -14,6 +14,16 @@ class MountainsController < ApplicationController
         render json: current_mountain
     end
 
+    def destroy
+        mountain = Mountain.find_by(id: params[:id])
+        if mountain
+            mountain.destroy
+            head :no_content
+        else
+            render json: {error: "Activity not found"}, status: :not_found
+        end
+    end
+
 
     private
 
