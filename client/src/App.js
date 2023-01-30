@@ -2,6 +2,7 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import HomePage from './HomePage';
+import Navbar from './NavBar';
 
 function App() {
   const [currentUser, setCurrentUser] = useState('')
@@ -17,7 +18,15 @@ function App() {
 
   if (!currentUser) return<HomePage setCurrentUser={currentUser} />
   return (
-    <HomePage setCurrentUser={setCurrentUser}/>
+    <div>
+      <Navbar />
+      <Routes>
+      <Route exact path="/" element={ <HomePage setCurrentUser={setCurrentUser}/>} />
+      {/* <Route exact path="/mountains" element */}
+      </Routes>
+      
+    
+    </div>
   );
 }
 

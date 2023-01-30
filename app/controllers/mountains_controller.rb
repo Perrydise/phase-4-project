@@ -14,6 +14,16 @@ class MountainsController < ApplicationController
         render json: current_mountain
     end
 
+    def update
+        mountain = Mountain.find_by(id: params[:id])
+        if mountain
+            mountain.update(mountain_params)
+            render json: mountain
+        else
+            render json: { error: "Mountain not found" }, status: :not_found
+        end
+    end
+
     def destroy
         mountain = Mountain.find_by(id: params[:id])
         if mountain
