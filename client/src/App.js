@@ -3,6 +3,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import HomePage from './HomePage';
 import Navbar from './NavBar';
+import { Routes, Route } from "react-router-dom"
 
 function App() {
   const [currentUser, setCurrentUser] = useState('')
