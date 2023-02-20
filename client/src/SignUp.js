@@ -18,11 +18,11 @@ function SignUp ({ setCurrentUser }) {
       })      
       .then(res => {
         res.json()
-        // if(res.ok){
-        //   res.json().then(setCurrentUser(user))
-        // } else {
-        //   res.json().then( e => console.error(e))
-        // }
+        if(res.ok){
+          res.json().then(setCurrentUser(user))
+        } else {
+          res.json().then( e => console.error(e))
+        }
       }).then ((res) => console.log(res))
       console.log(user)
       setUsername("")

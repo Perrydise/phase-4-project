@@ -1,4 +1,5 @@
 import React, { useEffect, useState} from "react";
+import MountainItem from "./MountainItem";
 
 function MountainDisplay(){
     const [mountains, setMountains] = useState([])
@@ -11,7 +12,7 @@ function MountainDisplay(){
     }, [])
 
     function handleDeleteMountain() {
-        fetch(`http://localhost:3000/mountains/${mountain.id}`,{
+        fetch(`http://localhost:3000/mountains/${mountains.id}`,{
             method: 'DELETE'
         })
         .then(res => {

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import HomePage from './HomePage';
 import Navbar from './NavBar';
 import { Routes, Route } from "react-router-dom"
+import MountainDisplay from './MountainDisplay';
 
 function App() {
   const [currentUser, setCurrentUser] = useState('')
@@ -23,7 +24,7 @@ function App() {
       <Navbar />
       <Routes>
       <Route exact path="/" element={ <HomePage setCurrentUser={setCurrentUser}/>} />
-      {/* <Route exact path="/mountains" element */}
+      <Route exact path="/mountains" element={ <MountainDisplay /> } />
       </Routes>
       
     
