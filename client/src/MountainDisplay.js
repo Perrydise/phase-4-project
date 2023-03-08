@@ -5,14 +5,14 @@ function MountainDisplay(){
     const [mountains, setMountains] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:3000/mountains")
+        fetch('/mountains')
         .then((r) => r.json())
         .then((mountains) => setMountains(mountains))
         .catch((error) => console.log(error))
     }, [])
 
     function handleDeleteMountain() {
-        fetch(`http://localhost:3000/mountains/${mountains.id}`,{
+        fetch(`/mountains/${mountains.id}`,{
             method: 'DELETE'
         })
         .then(res => {
@@ -24,7 +24,9 @@ function MountainDisplay(){
         })
     }
 
-    const dataDisplay = mountains.map((element, index) => {
+    const data = Array.from(mountains)
+
+    const dataDisplay = data.map((element, index) => {
         console.log(mountains)
         const id = element.id
         const name = element.name

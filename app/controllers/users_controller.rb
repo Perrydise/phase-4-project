@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    wrap_parameters fromat:[]
+    wrap_parameters format:[]
     skip_before_action :authorized, only: [:create]
 
     def create
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-        params.require(:user).permit(:username, :password)
+        params.permit(:username, :password)
     end
 
 

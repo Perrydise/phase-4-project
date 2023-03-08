@@ -1,5 +1,6 @@
 {
   "name": "phase-4-deploying-app-demo",
+  "proxy": "http://localhost:3000",
   "description": "Build scripts for Heroku",
   "engines": {
     "node": "16.x"

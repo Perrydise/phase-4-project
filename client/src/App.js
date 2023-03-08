@@ -10,11 +10,12 @@ function App() {
   const [currentUser, setCurrentUser] = useState('')
 
   useEffect(()=>{
-    fetch("http://localhost:3000/auth")
+    fetch('/auth')
     .then(res => {
+      if(res.ok){
         res.json().then(user => setCurrentUser(user))
       }
-    )
+      })
     .catch((e) => console.error(e))
   },[])
 

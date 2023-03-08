@@ -5,7 +5,7 @@ class MountainsController < ApplicationController
     end
 
     def index
-        moutains = Mountain.all
+        mountains = Mountain.all
         render json: mountains
     end
 

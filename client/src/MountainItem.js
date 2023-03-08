@@ -14,7 +14,7 @@ function MountainItem({ key, id, name, location, handleDeleteMountain }) {
     // }
 
     function handleDeleteClick() {
-        fetch(`http://localhost:3000/mountain/${id}`, {
+        fetch(`/mountain/${id}`, {
             method: "DELETE",
         })
         .then((r) => r.json())
@@ -24,8 +24,8 @@ function MountainItem({ key, id, name, location, handleDeleteMountain }) {
     return (
     <div className="mountain-item-display">
         <ul className="list-display">
-            <li key={id+"-name"}>{name}</li>
-            <li key={id+"-location"}>{location}</li>
+            <li key={id+"-name"}>Mountain name: {name}</li>
+            <li key={id+"-location"}>Location: {location}</li>
         </ul>
         <button onClick={handleDeleteClick}>Delete</button>
     </div>
