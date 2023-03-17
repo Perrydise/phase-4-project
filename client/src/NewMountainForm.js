@@ -4,8 +4,40 @@ function NewMountainForm() {
     const [name, setName] = useState("")
     const [location, setLocation] = useState("")
 
-    return (
+    function handleName(event){
+        setName(event.target.value)
+    }
 
+    function handleLocation(event){
+        setLocation(event.target.value)
+    }
+
+    function handleMountainSubmit(event) {
+        event.preventDefault()
+        const newMountain = {
+            name,
+            location
+        }
+        fetch('/mountain', {
+            method: "POST",
+            headers: {
+                "content-Type": "application/json"
+            },
+            body: JSON.stringify(newDealer)
+        })
+        onMountainFormSubmit(newMountain)
+        setName("")
+        setLocation("")
+    }
+
+    return (
+        <form className="mountain-form" onSubmit={handleDealerSubmit}>
+            <div className="mountain-div">
+                <label for="mountain name">Mountain Name:</label>
+                <input className="location-box" type="text" name="Mountain-name" value={name} onChange={handleName}/>
+                
+            </div>
+        </form>
     )
 }
 export default NewMountainForm

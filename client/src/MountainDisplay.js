@@ -24,6 +24,10 @@ function MountainDisplay(){
         })
     }
 
+    function onMountainFormSubmit(newMountain) {
+        setMountains([...mountains, newMountain])
+    }
+
     const data = Array.from(mountains)
 
     const dataDisplay = data.map((element, index) => {
