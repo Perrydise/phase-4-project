@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import NewMountainForm from "./NewMountainForm";
 
 function LeaveReviewPage() {
     const [mountains, setMountains] = useState([])
@@ -33,13 +34,13 @@ function LeaveReviewPage() {
 
     return(
         <div className="search_div">
-        <h1 className="search-header">Sell your car!</h1>
-        <h2 className="search-second-header">Please fill out our form to add your car to our database!</h2>
-        <CarForm carArray={cars} onCarFormSubmit={onCarFormSubmit}  dealers={dealers} />
+        <h1 className="search-header">Leave a review</h1>
+        <h2 className="search-second-header">Please fill out our form to add your review to the page!</h2>
+        <ReviewForm mountainData={mountains} onReviewFormSubmit={onReviewFormSubmit} />
         {isShown && 
-            <DealerForm onDealerFormSubmit={onDealerFormSubmit} />
+            <NewMountainForm onMountainFormSubmit={onMountainFormSubmit} />
         }
-        <button onClick={handleClick}>Show Dealer Form</button>
+        <button onClick={handleClick}>Didn't see your mountain?</button>
     </div>
     )
 }

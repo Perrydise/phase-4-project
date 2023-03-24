@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 
-function NewMountainForm() {
+function NewMountainForm({ onMountainFormSubmit }) {
     const [name, setName] = useState("")
     const [location, setLocation] = useState("")
 
@@ -34,8 +34,9 @@ function NewMountainForm() {
         <form className="mountain-form" onSubmit={handleDealerSubmit}>
             <div className="mountain-div">
                 <label for="mountain name">Mountain Name:</label>
-                <input className="location-box" type="text" name="Mountain-name" value={name} onChange={handleName}/>
-                
+                <input className="name-box" type="text" name="Mountain-name" value={name} onChange={handleName}/>
+                <label for="mountain location">Mountain Location:</label>
+                <input className="location-box" type="text" name="Mountain-location" value={location} onChange={handleLocation}/>
             </div>
         </form>
     )
