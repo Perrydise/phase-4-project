@@ -26,6 +26,7 @@ function App() {
       <Routes>
       <Route exact path="/" element={ <HomePage setCurrentUser={setCurrentUser}/>} />
       <Route exact path="/mountains" element={ <MountainDisplay /> } />
+      <Route exact path="/leaveAReview" element={ <LeaveReviewPage /> } />
       </Routes>
       
     

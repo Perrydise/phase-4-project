@@ -1,4 +1,5 @@
 import React from "react"
+import Logout from "./Logout.JS"
 
 function Navbar () {
     return (
@@ -12,7 +13,7 @@ function Navbar () {
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="/mountains">Mountains</a>
-      {/* <a class="nav-item nav-link" href="/showCars">Cars for sale</a> */}
+      <a class="nav-item nav-link" href="/leaveAReview">Leave a review</a>
     </div>
   </div>
 </nav>

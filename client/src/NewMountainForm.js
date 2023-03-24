@@ -18,7 +18,7 @@ function NewMountainForm({ onMountainFormSubmit }) {
             name,
             location
         }
-        fetch('/mountain', {
+        fetch('/mountains', {
             method: "POST",
             headers: {
                 "content-Type": "application/json"
@@ -31,7 +31,7 @@ function NewMountainForm({ onMountainFormSubmit }) {
     }
 
     return (
-        <form className="mountain-form" onSubmit={handleDealerSubmit}>
+        <form className="mountain-form" onSubmit={handleMountainSubmit}>
             <div className="mountain-div">
                 <label for="mountain name">Mountain Name:</label>
                 <input className="name-box" type="text" name="Mountain-name" value={name} onChange={handleName}/>

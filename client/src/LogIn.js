@@ -18,7 +18,7 @@ function LogIn ({setCurrentUser}) {
       if (r.ok) {
         r.json().then((user) => setCurrentUser(user));
       } else {
-        r.json().then((err) => setErrors(err.errors));
+        r.ljson().then((err) => setErrors(err.errors));
       }
     });
     setUsername("")
