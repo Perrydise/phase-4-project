@@ -4,6 +4,7 @@ function Logout() {
 
     function handleLogout() {
         localStorage.clear()
+        return <Redirect to="/home" />
     }
 
     return (

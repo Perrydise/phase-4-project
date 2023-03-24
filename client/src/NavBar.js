@@ -14,6 +14,7 @@ function Navbar () {
       <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="/mountains">Mountains</a>
       <a class="nav-item nav-link" href="/leaveAReview">Leave a review</a>
+      {Logout}
     </div>
   </div>
 </nav>
