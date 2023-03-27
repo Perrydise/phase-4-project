@@ -23,7 +23,7 @@ function NewMountainForm({ onMountainFormSubmit }) {
             headers: {
                 "content-Type": "application/json"
             },
-            body: JSON.stringify(newDealer)
+            body: JSON.stringify(newMountain)
         })
         onMountainFormSubmit(newMountain)
         setName("")

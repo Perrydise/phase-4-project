@@ -34,7 +34,7 @@ function ReviewForm({ mountainData, onReviewFormSubmit }) {
             headers: {
                 "content-Type": "application/json"
             },
-            body: JSON.stringify(newCar)
+            body: JSON.stringify(newReview)
         })
         .then((r) => console.log(r))
         .catch((error) => console.log(error))
