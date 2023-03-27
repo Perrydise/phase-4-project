@@ -1,5 +1,5 @@
 import React from "react"
-import Logout from "./Logout.JS"
+import Logout from "./Logout.js"
 
 function Navbar () {
     return (

@@ -38,6 +38,7 @@ function NewMountainForm({ onMountainFormSubmit }) {
                 <label for="mountain location">Mountain Location:</label>
                 <input className="location-box" type="text" name="Mountain-location" value={location} onChange={handleLocation}/>
             </div>
+            <input type="submit" value="Add mountain"/>
         </form>
     )
 }

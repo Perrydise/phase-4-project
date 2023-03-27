@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import NewMountainForm from "./NewMountainForm";
+import ReviewForm from "./ReviewForm";
 
 function LeaveReviewPage() {
     const [mountains, setMountains] = useState([])
@@ -24,12 +25,12 @@ function LeaveReviewPage() {
         .catch((error) => console.log(error))
     }, [])
 
-    function onMountainFormSubmit(newCar) {
-        setCars([...cars, newCar])
+    function onMountainFormSubmit(newMountain) {
+        setMountains([...mountains, newMountain])
     }
 
-    function onReviewFormSubmit(newDealer) {
-        setDealers([...dealers, newDealer])
+    function onReviewFormSubmit(newReview) {
+        setReviews([...reviews, newReview])
     }
 
     return(

@@ -55,6 +55,9 @@ function ReviewForm({ mountainData, onReviewFormSubmit }) {
                     {mountainOptions}
                 </select>
             </div>
+            <input type="submit" value="Add Review"/>
         </form>
     )
 }
+
+export default ReviewForm

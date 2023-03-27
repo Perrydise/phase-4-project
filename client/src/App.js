@@ -5,6 +5,7 @@ import HomePage from './HomePage';
 import Navbar from './NavBar';
 import { Routes, Route } from "react-router-dom"
 import MountainDisplay from './MountainDisplay';
+import LeaveReviewPage from './LeaveReviewPage';
 
 function App() {
   const [currentUser, setCurrentUser] = useState('')
