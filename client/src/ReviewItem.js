@@ -17,7 +17,7 @@ function ReviewItem(key, id, body, username, reviewSubmit) {
             <li key={id+"-username"}>User: {username}</li>
             <li key={id+"-body"}>Review: {body}</li>
         </ul>
-        {/* <button onClick={handleDeleteClick}>Delete</button> */}
+        <button onClick={handleDeleteClick}>Delete</button>
     </div>
 
     )

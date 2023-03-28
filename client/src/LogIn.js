@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import {useNavigate} from "react-router-dom"
 
 function LogIn ({setCurrentUser}) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
+  const navigate = useNavigate()
 
 
   function handleSubmit(e) {
@@ -17,6 +19,7 @@ function LogIn ({setCurrentUser}) {
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => setCurrentUser(user));
+        navigate("/mountains")
       } else {
         r.json().then((err) => setErrors(err.errors));
       }

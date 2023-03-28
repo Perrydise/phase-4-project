@@ -1,6 +1,8 @@
 import React, {useState} from "react";
+import {useNavigate} from "react-router-dom"
 
 function MountainItem({ key, id, name, location, handleDeleteMountain }) {
+    const navigate = useNavigate()
 
     // const [formName, setFormName] = useState(name)
     // const [formLocation, setFormLocation] = useState(location)
@@ -21,13 +23,19 @@ function MountainItem({ key, id, name, location, handleDeleteMountain }) {
         .then(() => handleDeleteMountain(id))
     }
 
+    function handleMountainNav(){
+        navigate("/mountain/"+id)
+    }
+
+
+
     return (
     <div className="mountain-item-display">
-        <ul className="list-display">
-            <li key={id+"-name"}>Mountain name: {name}</li>
+        <ul className="list-display">            
+            <li key={id+"-name"}>Mountain name: {name}\</li>
             <li key={id+"-location"}>Location: {location}</li>
         </ul>
-        {/* <button onClick={handleDeleteClick}>Delete</button> */}
+        <button onClick={handleMountainNav}>Leave a review!</button>
     </div>
         )
 }

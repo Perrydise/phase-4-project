@@ -6,6 +6,7 @@ import Navbar from './NavBar';
 import { Routes, Route } from "react-router-dom"
 import MountainDisplay from './MountainDisplay';
 import LeaveReviewPage from './LeaveReviewPage';
+import SingleMountainDisplay from './SingleMountainDisplay';
 
 function App() {
   const [currentUser, setCurrentUser] = useState('')
@@ -28,6 +29,8 @@ function App() {
       <Route exact path="/" element={ <HomePage setCurrentUser={setCurrentUser}/>} />
       <Route exact path="/mountains" element={ <MountainDisplay /> } />
       <Route exact path="/leaveAReview" element={ <LeaveReviewPage /> } />
+      <Route exact path="/mountain/:id" element={ <SingleMountainDisplay /> } />
+
       </Routes>
       
     
