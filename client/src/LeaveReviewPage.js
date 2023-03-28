@@ -18,12 +18,7 @@ function LeaveReviewPage() {
         .catch((error) => console.log(error))
     }, [])
 
-    useEffect(() => {
-        fetch(`/reviews`)
-        .then((r) => r.json())
-        .then((reviews) =>setReviews(reviews))
-        .catch((error) => console.log(error))
-    }, [])
+    
 
     function onMountainFormSubmit(newMountain) {
         setMountains([...mountains, newMountain])
