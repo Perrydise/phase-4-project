@@ -32,7 +32,7 @@ function MountainItem({ key, id, name, location, handleDeleteMountain }) {
     return (
     <div className="mountain-item-display">
         <ul className="list-display">            
-            <li key={id+"-name"}>Mountain name: {name}\</li>
+            <li key={id+"-name"}>Mountain name: {name}</li>
             <li key={id+"-location"}>Location: {location}</li>
         </ul>
         <button onClick={handleMountainNav}>Leave a review!</button>

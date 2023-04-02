@@ -1,6 +1,9 @@
 class ReviewsController < ApplicationController
 
     def create
+        current_body = params[:body]
+        current_user = params[:user_id]
+        current_mountain = params[:mountain_id]
         review = Review.create!(review_params)
         render json: review, status: :created
     end
@@ -28,7 +31,7 @@ class ReviewsController < ApplicationController
     private
 
     def review_params
-        params.permit(:body)
+        params.permit(:body, :mountainId, :user_id, :review )
     end
 
 end

@@ -9,9 +9,11 @@ class MountainsController < ApplicationController
         render json: mountains
     end
 
+    # includes(:reviews).
+
     def show
-        current_mountain = Mountain.find(session[:mountain_id])
-        render json: current_mountain
+        current_mountain = Mountain.find_by(id: params[:id])
+        render json: current_mountain.to_json(include: :reviews)
     end
 
     def update
@@ -23,6 +25,7 @@ class MountainsController < ApplicationController
             render json: { error: "Mountain not found" }, status: :not_found
         end
     end
+
 
     def destroy
         mountain = Mountain.find_by(id: params[:id])

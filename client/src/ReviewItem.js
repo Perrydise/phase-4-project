@@ -1,14 +1,16 @@
 import React from "react";
 
-function ReviewItem(key, id, body, username, reviewSubmit) {
+function ReviewItem({ key, id, body, username }) {
 
-    function handleDeleteClick() {
-        fetch(`/reviews/${id}`, {
-            method: "DELETE",
-        })
-        .then((r) => r.json())
-        .then(() => handleDeleteReview(id))
-    }
+    // function handleDeleteClick() {
+    //     fetch(`/reviews/${id}`, {
+    //         method: "DELETE",
+    //     })
+    //     .then((r) => r.json())
+    //     .then(() => handleDeleteReview(id))
+    // }
+
+    
 
     return (
 
@@ -17,7 +19,7 @@ function ReviewItem(key, id, body, username, reviewSubmit) {
             <li key={id+"-username"}>User: {username}</li>
             <li key={id+"-body"}>Review: {body}</li>
         </ul>
-        <button onClick={handleDeleteClick}>Delete</button>
+        {/* <button onClick={handleDeleteClick}>Delete</button> */}
     </div>
 
     )

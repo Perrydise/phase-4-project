@@ -3,7 +3,7 @@ import React, {useState} from "react";
 function ReviewForm({ mountainData, onReviewFormSubmit }) {
     const [body, setBody] = useState("")
     const [username, setUsername] = useState("")
-    const [mountain, setMountain] = useState("")
+    const [mountainId, setMountainId] = useState("")
 
     const mountainOptions = mountainData.map((element) => {
         const id = element.id
@@ -20,14 +20,14 @@ function ReviewForm({ mountainData, onReviewFormSubmit }) {
 
     function handleMountainClick(event) {
         console.log(event.target.value)
-        setMountain(event.target.value)
+        setMountainId(event.target.value)
     }
 
     function handleReviewSubmit(event) {
         event.preventDefault()
         const newReview = {
             body: body,
-            mountain: mountain
+            mountainId: mountainId
         }
         fetch('/reviews', {
             method: "POST",
@@ -40,18 +40,18 @@ function ReviewForm({ mountainData, onReviewFormSubmit }) {
         .catch((error) => console.log(error))
         onReviewFormSubmit(newReview)
         setBody("")
-        setMountain("")
+        setMountainId("")
     }
 
     return (
         <form className="review-form" onSubmit={handleReviewSubmit}>
             <div className="review-form-div">
-                <label for="review">Leave a review! </label>
-                <input className="review-box" type="text" name="Review" value={body} onChange={handleBody}/>
+                <label for="body">Leave a review! </label>
+                <input className="review-box" type="text" name="body" value={body} onChange={handleBody}/>
             </div>
             <div className="review-mountain-div">
-                <label for="mountain">What mountain was it? </label>
-                <select name="mountains" id="mountains" onChange={handleMountainClick}>
+                <label for="mountainId">What mountain was it? </label>
+                <select name="mountainId" id="mountainId" onChange={handleMountainClick}>
                     {mountainOptions}
                 </select>
             </div>
