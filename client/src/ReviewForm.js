@@ -26,9 +26,10 @@ function ReviewForm({ mountainData, onReviewFormSubmit }) {
     function handleReviewSubmit(event) {
         event.preventDefault()
         const newReview = {
-            body: body,
-            mountainId: mountainId
+            body,
+            mountainId
         }
+        console.log(newReview)
         fetch('/reviews', {
             method: "POST",
             headers: {

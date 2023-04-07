@@ -36,3 +36,36 @@
     transform: rotate(360deg);
   }
 }
+
+.home-main-div {
+  height: 100vh;
+  background-image: url(./SkiCollage.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home-title {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 80px;
+  color: white;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+.form-box1, .form-box2, .form-box3 {
+  display: block;
+  font-size: 20px;
+  width: 100%;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  color: white;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+.home-second-title {
+  text-align: center;
+  font-size: 40px;
+  color: white;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+}

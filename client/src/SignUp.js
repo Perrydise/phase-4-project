@@ -32,8 +32,10 @@ function SignUp ({ setCurrentUser }) {
       setPassword("")
     }
   
-    return (     
+    return (   
+        
       <form onSubmit={handleSubmit}>
+        <div className="form-box1">
         <label for="username">Username: </label>
         <input
           type="text"
@@ -41,6 +43,8 @@ function SignUp ({ setCurrentUser }) {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
+        </div>
+        <div className="form-box2">
         <label htmlFor="password">Password: </label>
         <input
           type="password"
@@ -48,6 +52,8 @@ function SignUp ({ setCurrentUser }) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        </div>
+        <div className="form-box3">
         <label for="password_confirmation">Confirm Password: </label>
         <input
           type="password"
@@ -55,6 +61,7 @@ function SignUp ({ setCurrentUser }) {
           value={passwordConfirmation}
           onChange={(e) => setPasswordConfirmation(e.target.value)}
         />
+        </div>
         <button type="submit">Sign up</button>
       </form>
     );
