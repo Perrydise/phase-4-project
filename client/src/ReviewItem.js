@@ -18,8 +18,8 @@ function ReviewItem({ key, id, body, username, handleDeleteReview }) {
 
         <div className="review-item-display">
         <ul className="review-list-display">
-            <li key={id+"-username"}>User: {username}</li>
-            <li key={id+"-body"}>Review: {body}</li>
+            <li className="review-author" key={id+"-username"}>User: {username}</li>
+            <li className="review-item" key={id+"-body"}>Review: {body}</li>
         </ul>
         <button onClick={handleDeleteClick}>Delete</button>
     </div>

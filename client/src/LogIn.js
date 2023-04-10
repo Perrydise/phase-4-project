@@ -46,10 +46,14 @@ function LogIn ({setCurrentUser}) {
   
     return (
       <form onSubmit={handleSubmit}>
+        <div className="login-box1">
         <label htmlFor="username">Username: </label>
         <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+        </div>
+        <div className="login-box2">
         <label htmlFor="password">Password:</label>
         <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        </div>
         <button type="submit">Login</button>
       </form>
     )

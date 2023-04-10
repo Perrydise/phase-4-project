@@ -79,12 +79,14 @@ function SingleMountainDisplay(){
 
     return (
         <div>
+            <body className="mountain-body">
             <div>
            <h1 className="single-mountain-name">Reviews for {mountain.name} {mountain.location}</h1>
            </div>
            <div>
             {renderedReviews}
            </div>
+           </body>
         </div>
     )
 }

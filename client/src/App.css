@@ -63,9 +63,128 @@
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
 }
 
+.login-box1, .login-box2 {
+  display: block;
+  font-size: 20px;
+  width: 100%;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  color: white;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+}
+
 .home-second-title {
   text-align: center;
   font-size: 40px;
   color: white;
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+.eight h1 {
+  text-align:center;
+  padding-top: 40px;
+  text-transform:uppercase;
+  font-size:26px; letter-spacing:1px;
+  
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 16px 0;
+  grid-gap: 22px;
+}
+
+.eight h1:after,.eight h1:before {
+  content: " ";
+  display: block;
+  border-bottom: 2px solid #ccc;
+  background-color:#f8f8f800;
+}
+
+.display-header {
+  font-size: 36px; 
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0; 
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); 
+  color: rgb(12, 10, 10);
+}
+
+.list-display {
+  list-style: disc; 
+  margin: 0; 
+  padding: 0 0 0 20px; 
+  padding-bottom: 7px;
+  
+}
+
+.mountain-button {
+  display: inline-block;
+    padding: 12px 2px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mountain-item-display {
+  padding-bottom: 15px;
+}
+
+.single-mountain-name {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.review-item {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 25px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.review-item-display {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.review-author {
+  font-style: italic;
+  font-size: 14px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.mountain-body {
+  height: 100vh;
+  background: linear-gradient(to bottom, #f1f1f1, #d9d9d9);
+}
+
+.navbar-nav a {
+  margin-right: 10px; 
+}
+
+.navbar-nav a {
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+}
+
+.navbar-nav a:hover {
+  text-decoration: underline;
+}
+
+.navbar-nav a {
+  background-color: #f5f5f5;
+  padding: 10px 15px;
 }

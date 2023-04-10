@@ -35,7 +35,7 @@ function MountainItem({ key, id, name, location, handleDeleteMountain }) {
             <li key={id+"-name"}>Mountain name: {name}</li>
             <li key={id+"-location"}>Location: {location}</li>
         </ul>
-        <button onClick={handleMountainNav}>Leave a review!</button>
+        <button className="mountain-button" onClick={handleMountainNav}>Leave a review!</button>
     </div>
         )
 }
