@@ -30,6 +30,7 @@ function LeaveReviewPage() {
 
     return(
         <div className="search_div">
+        <body className="leave-review-page">
         <h1 className="search-header">Leave a review</h1>
         <h2 className="search-second-header">Please fill out our form to add your review to the page!</h2>
         <ReviewForm mountainData={mountains} onReviewFormSubmit={onReviewFormSubmit} />
@@ -37,6 +38,7 @@ function LeaveReviewPage() {
             <NewMountainForm onMountainFormSubmit={onMountainFormSubmit} />
         }
         <button onClick={handleClick}>Didn't see your mountain?</button>
+        </body>
     </div>
     )
 }

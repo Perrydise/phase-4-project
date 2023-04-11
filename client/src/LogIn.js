@@ -27,22 +27,6 @@ function LogIn ({setCurrentUser}) {
     setUsername("")
     setPassword("")
   }
-
-//   function handleSubmit(e) {
-//     e.preventDefault()
-//     const user = {
-//       username,
-//       password
-//     }
-//     fetch('/users',{
-//       method: "POST",
-//       headers:{'Content-type':'application/json'},
-//       body:JSON.stringify(user)
-//     })
-//     .then((r) => r.json())
-//     .then((user) => setCurrentUser(user))
-//   }
-// )
   
     return (
       <form onSubmit={handleSubmit}>

@@ -14,34 +14,15 @@ function SingleMountainDisplay(){
         .then((mountainRes) =>{
             setMountain(mountainRes)
             console.log(mountainRes, mountainRes.reviews)
-            if(mountainRes && mountainRes.reviews){
-                // const singleMountainData = mountainRes.reviews.map((element, index) => {
-                //     console.log(element)
-                //     const id = element.id
-                //     const body = element.body
-                //     const username = element.username
-                //     return (
-                //         <ReviewItem key={index} id={id} body={body} username={username} handleDeleteReview={handleDeleteReview} />
-                //     )
-                // })
-                setReviews(mountainRes.reviews)
-                
-                // console.log(singleMountainData)
-                
-                console.log(reviews, mountainRes.reviews)
-                
+            if(mountainRes && mountainRes.reviews){               
+                setReviews(mountainRes.reviews)                
+                console.log(reviews, mountainRes.reviews)                
             }
         })        
         .catch((error) => console.log(error))
     }, [])
 
-    // useEffect(() => {
-    //     fetch('/reviews')
-    //     .then((r) => r.json())
-    //     .then((reviews) => setReviews(reviews))
-    //     .catch((error) => console.log(error))
-    // }, [])  
-
+   
     
 
     const handleDeleteReview = (deletedReviewId) => {
@@ -50,32 +31,20 @@ function SingleMountainDisplay(){
         setReviews(updatedReviews);
     }
 
-    // function mapReturn(arrayReviews) {
-    //     return arrayReviews.map((element) => {
-    //         console.log(element)
-    //         const id = element.id
-    //         const body = element.body
-    //         const username = element.username
-    //         return (
-    //             <ReviewItem key={id} id={id} body={body} username={username} handleDeleteReview={handleDeleteReview} />
-    //         )
-    //     })
-    // }
+    function handleUpdateReview(updatedReviewId){
+        const updatedReviewList = reviews.filter((review) => {
+            return updatedReviewId != review.id
+        }) 
+        setCars(updatedCarList)
+    }
+
+   
 
     const renderedReviews = reviews.map((review) => (
-        <ReviewItem key={review.id} id={review.id} body={review.body} username={review.username} handleDeleteReview={handleDeleteReview} />
+        <ReviewItem key={review.id} id={review.id} body={review.body} username={review.username} handleDeleteReview={handleDeleteReview} handleUpdateReview={handleUpdateReview} />
       ))
     
-    // const singleMountainData = mountain.reviews.map((element, index) => {
-    //     console.log(mountain)
-    //     const id = element.id
-    //     const body = element.body
-    //     const username = element.username
-    //     return (
-    //         <ReviewItem key={index} id={id} body={body} username={username} />
-    //     )
-    // }) 
-    // console.log(mountain)
+   
 
     return (
         <div>
