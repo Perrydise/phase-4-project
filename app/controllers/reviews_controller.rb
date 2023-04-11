@@ -31,22 +31,23 @@ class ReviewsController < ApplicationController
         render json: current_review
     end
 
-    # def destroy
-    #     review = Review.find_by(id: params[:id])
-    #     if review
-    #         review.destroy
-    #         head :no_content
-    #     else
-    #         render json: {error: "could not create"}, status: :unprocessable_entity
-    #     end
-    # end
+    def update
+      @review = Review.find(params[:id])
+      if @review.user_id == session[:user_id] 
+        if @review.update(review_params)
+          render json: @review, status: :ok
+        else
+          render json: { errors: @review.errors.full_messages }, status: :unprocessable_entity
+        end
+      else
+        render json: { message: "You are not authorized to update this review" }, status: :unauthorized
+      end
+    end
 
     def destroy
-        # current_user = session[:user_id]
         review = Review.find_by(id: params[:id])
         if review.user_id == session[:user_id]
           review.destroy
-        #   head :no_content
           render json: { message: "Review deleted" }, status: :ok
         else
           render json: { message: "You are not authorized to delete this review" }, status: :unauthorized
