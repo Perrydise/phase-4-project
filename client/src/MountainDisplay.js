@@ -11,7 +11,6 @@ function MountainDisplay(){
         .then((mountains) => setMountains(mountains))
         .catch((error) => console.log(error))
     }, [])
-
    
 
     function handleDeleteMountain() {

@@ -35,7 +35,7 @@ function SingleMountainDisplay(){
         const updatedReviewList = reviews.filter((review) => {
             return updatedReviewId != review.id
         }) 
-        setCars(updatedCarList)
+        setReviews(updatedReviewList)
     }
 
    
