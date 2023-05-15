@@ -8,4 +8,5 @@ class Review < ApplicationRecord
     belongs_to :mountain
 
     delegate :username, to: :user
+    validates :user, presence: true
 end

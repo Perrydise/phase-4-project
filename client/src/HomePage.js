@@ -10,7 +10,7 @@ function HomePage({setCurrentUser}) {
     }
 
     return(
-        <div className="home-main-div">
+            <div className="home-main-div">
             <body className="home-body">
             <h1 className="home-title">Mountain View</h1>
             <h2 className="home-second-title">Please create an account to continue</h2>
@@ -20,7 +20,7 @@ function HomePage({setCurrentUser}) {
             }
             <button onClick={handleClick}>Login</button>
             </body>
-        </div>
+            </div>
     )
 }
 export default HomePage

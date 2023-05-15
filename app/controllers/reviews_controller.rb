@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  wrap_parameters format:[]
 
     def create
         puts params
@@ -31,18 +32,32 @@ class ReviewsController < ApplicationController
         render json: current_review
     end
 
+    # def update
+    #   @review = Review.find(params[:id])
+    #   if @review.user_id == session[:user_id] 
+    #     if @review.update(review_params)
+    #       render json: @review, status: :ok
+    #     else
+    #       render json: { errors: @review.errors.full_messages }, status: :unprocessable_entity
+    #     end
+    #   else
+    #     render json: { message: "You are not authorized to update this review" }, status: :unauthorized
+    #   end
+    # end
+
     def update
-      @review = Review.find(params[:id])
-      if @review.user_id == session[:user_id] 
-        if @review.update(review_params)
-          render json: @review, status: :ok
+      review = Review.find_by(id: params[:id])
+      if review.user_id == session[:user_id] 
+        if review.update(review_params)
+          render json: review
         else
-          render json: { errors: @review.errors.full_messages }, status: :unprocessable_entity
+          render json: { errors: review.errors.full_messages }, status: :unprocessable_entity
         end
       else
         render json: { message: "You are not authorized to update this review" }, status: :unauthorized
       end
     end
+    
 
     def destroy
         review = Review.find_by(id: params[:id])
@@ -58,7 +73,7 @@ class ReviewsController < ApplicationController
     private
 
     def review_params
-        params.permit(:body, :mountain_id, :user_id )
+        params.permit(:body, :mountain_id, :user_id, :id )
     end
 
 end

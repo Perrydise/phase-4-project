@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {useNavigate} from "react-router-dom"
 
-function MountainItem({ key, id, name, location, handleDeleteMountain }) {
+function MountainItem({ id, name, location, handleDeleteMountain }) {
     const navigate = useNavigate()
 
     // const [formName, setFormName] = useState(name)

@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
     skip_before_action :authorized, only: :create
-
     def create
         user = User.find_by(username: params[:username])
         if user&.authenticate(params[:password])
@@ -11,9 +10,8 @@ class SessionsController < ApplicationController
         end
     end
 
-    def destroy
-        User.find(session[:user_id]).destroy      
-        session[:user_id] = nil         
+    def destroy      
+        session.clear        
         redirect_to '/' 
       end  
 

@@ -36,7 +36,7 @@ function SignUp ({ setCurrentUser }) {
         
       <form onSubmit={handleSubmit}>
         <div className="form-box1">
-        <label for="username">Username: </label>
+        <label htmlFor="username">Username: </label>
         <input
           type="text"
           id="username"
@@ -54,7 +54,7 @@ function SignUp ({ setCurrentUser }) {
         />
         </div>
         <div className="form-box3">
-        <label for="password_confirmation">Confirm Password: </label>
+        <label htmlFor="password_confirmation">Confirm Password: </label>
         <input
           type="password"
           id="password_confirmation"

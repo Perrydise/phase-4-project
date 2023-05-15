@@ -4,9 +4,8 @@ import {useNavigate} from "react-router-dom"
 function LogIn ({setCurrentUser}) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState([]);
+  const [errors, setErrors] = useState("");
   const navigate = useNavigate()
-
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -18,18 +17,33 @@ function LogIn ({setCurrentUser}) {
       body: JSON.stringify({ username, password }),
     }).then((r) => {
       if (r.ok) {
-        r.json().then((user) => setCurrentUser(user));
-        navigate("/mountains")
+        return r.json();
       } else {
-        r.json().then((err) => setErrors(err.errors));
+        return r.json().then((err) => {
+          throw err;
+        });
       }
+    })
+    .then((user) => {
+      setCurrentUser(user);
+      navigate("/mountains");
+      setUsername("");
+      setPassword("");
+      setErrors("");
+    })
+    .catch((e) => {
+      console.error(e);
+      setErrors("Incorrect username or password");
+      console.log(errors)
+      setUsername("");
+      setPassword("");
     });
-    setUsername("")
-    setPassword("")
   }
+  
   
     return (
       <form onSubmit={handleSubmit}>
+        {errors && <div className="error-div">{errors}</div>}
         <div className="login-box1">
         <label htmlFor="username">Username: </label>
         <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
